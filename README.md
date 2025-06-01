@@ -1,6 +1,8 @@
 # API Automation Testing Project
 A comprehensive Python-based API automation framework for testing automationexercise.com APIs using PyTest, Requests, and JSON Schema validation.
 
+![Project Structure](docs/images/Project-structure.png)
+
 ## Features
 - Service Object Model (SOM): Clean separation of API calls from test logic
 - Comprehensive Test Coverage: 14 different API endpoints with positive/negative scenarios
@@ -55,6 +57,8 @@ API Endpoint, Method, Expected-Status, Test-Type
  - 13/updateAccountPUT200Positive
  - 14/getUserDetailByEmailGET200Positive
 
+![Test Coverage](docs/images/Allure-Detailed-Report.png)
+
 ## Installation
 
 ```
@@ -62,6 +66,8 @@ git clone <repository-url>
 cd api-automation-project
 pip install -r requirements.txt
 ```
+
+![Project Structure](docs/images/Project-structure.png)
 
 ## Running Tests
 
@@ -84,16 +90,19 @@ pytest tests/ -n auto
 To install Allure CLI locally (Windows):
 
 ### Install Scoop:
+(Not As Admin)
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 iwr -useb get.scoop.sh | iex
 scoop install allure
 
 ### Generate Allure report locally:
+```
 pytest --alluredir=allure-results
 allure serve allure-results
-
+```
 - Allure CI Integration is configured in .github/workflows/ci.yml
 
+![GitHub Actions Overview](docs/images/Allure-Summary.png)
 
 ## Test Structure
 
@@ -147,6 +156,8 @@ Update .env to modify:
 
 And in Github Actions > Secrets to modify:
 - Test credentials in CI
+
+![GitHub Actions Overview](docs/images/GitHub-Actions-Workflow.png)
 
 ## Reports
 
