@@ -1,7 +1,7 @@
 # API Automation Testing Project
 A comprehensive Python-based API automation framework for testing automationexercise.com APIs using PyTest, Requests, and JSON Schema validation.
 
-![Project Structure](docs/images/Project-structure.png)
+![Project Structure](docs/images/Terminal-Test-Result.png)
 
 ## Features
 - Service Object Model (SOM): Clean separation of API calls from test logic
