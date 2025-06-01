@@ -27,9 +27,6 @@ api-automation-project/
 │   ├── test_search.py
 │   ├── test_login.py
 │   └── test_user.py
-├── data/                      # Test data and JSON payloads
-│   ├── login_data.json
-│   └── user_data.json
 ├── utils/                     # Utility functions (e.g., JSON schema validator)
 │   ├── schema_validator.py
 │   ├── logger.py
@@ -111,9 +108,14 @@ Multiple Python versions (3.8, 3.9, 3.10)
 Update utils/config.py to modify:
 
 Base URL
-Test credentials
 Timeout settings
 Test data
+
+Update .env to modify:
+Test credentials in local
+
+And in Github Actions > Secrets to modify:
+Test credentials in CI
 
 ## Reports
 Tests generate HTML reports showing:
