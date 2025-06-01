@@ -24,19 +24,16 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: 🧪 Run API Tests with Pytest + Allure
-      run: |
-        pytest --maxfail=1 --disable-warnings -v --alluredir=allure-results
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'
 
     - name: 📥 Install Allure Commandline
-      run: |
-        sudo apt-add-repository ppa:qameta/allure -y
-        sudo apt-get update
-        sudo apt-get install allure -y
+      run: npm install -g allure-commandline --save-dev
 
     - name: 🔧 Generate Allure Report
-      run: |
-        allure generate allure-results -o allure-report --clean
+      run: allure generate allure-results -o allure-report --clean
 
     - name: 📤 Upload Allure Report Artifact
       uses: actions/upload-artifact@v3

@@ -1,1 +1,24 @@
-venv
+# Virtual environment
+.env/
+venv/
+ENV/
+env/
+
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Pytest
+.pytest_cache/
+
+# Environment and secrets
+.env
+*.env
+
+data/login_data.json
+data/user_data.json
+
+# example files - commit these
+!data/login_data.json.example
+!data/user_data.json.example
