@@ -1,0 +1,12 @@
+{
+  "login_data": {
+    "valid_credentials": {
+      "email": "SET_TEST_EMAIL_ENV_VAR",
+      "password": "SET_TEST_PASSWORD_ENV_VAR"
+    },
+    "invalid_credentials": {
+      "email": "invalid@example.com",
+      "password": "wrongpassword"
+    }
+  }
+}
