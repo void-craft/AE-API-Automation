@@ -22,3 +22,5 @@ data/user_data.json
 # example files - commit these
 !data/login_data.json.example
 !data/user_data.json.example
+
+.gitignore
