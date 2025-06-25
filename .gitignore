@@ -24,3 +24,4 @@ data/user_data.json
 !data/user_data.json.example
 
 .gitignore
+allure-results/
