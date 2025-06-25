@@ -5,7 +5,7 @@ ENV/
 env/
 
 # Byte-compiled / cache
-__pycache__/
+*__pycache__/
 *.py[cod]
 *.pyo
 

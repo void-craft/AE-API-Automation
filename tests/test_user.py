@@ -6,15 +6,10 @@ class TestUserAPI:
     
     def test_create_user_account_success(self, user_api, test_user_data, schema_validator):
         """Test API 11: POST To Create/Register User Account"""
-        # Generate unique email to avoid conflicts
         test_user_data['email'] = f"test_{uuid.uuid4().hex[:8]}@example.com"
-        
         response = user_api.create_account(test_user_data)
-        
-        # API returns 200 instead of 201
         assert response.status_code == 200
         response_json = response.json()
-        
         schema = schema_validator.get_error_message_schema()
         assert schema_validator.validate_response(response_json, schema)
         assert response_json["responseCode"] == 201
@@ -22,7 +17,6 @@ class TestUserAPI:
     
     def test_delete_user_account_success(self, user_api, schema_validator):
         """Test API 12: DELETE METHOD To Delete User Account"""
-        # First create a user to delete
         test_data = {
             'name': 'Delete Test User',
             'email': f"delete_{uuid.uuid4().hex[:8]}@example.com",
@@ -43,7 +37,7 @@ class TestUserAPI:
             'mobile_number': '+1234567890'
         }
         
-        # Create account - expect 200 instead of 201
+        # Create account
         create_response = user_api.create_account(test_data)
         assert create_response.status_code == 200
         
@@ -60,7 +54,6 @@ class TestUserAPI:
     
     def test_update_user_account_success(self, user_api, schema_validator):
         """Test API 13: PUT METHOD To Update User Account"""
-        # First create a user to update
         test_data = {
             'name': 'Update Test User',
             'email': f"update_{uuid.uuid4().hex[:8]}@example.com",
@@ -81,7 +74,7 @@ class TestUserAPI:
             'mobile_number': '+1234567890'
         }
         
-        # Create account - expect 200 instead of 201
+        # Create account
         create_response = user_api.create_account(test_data)
         assert create_response.status_code == 200
         
@@ -100,7 +93,6 @@ class TestUserAPI:
     
     def test_get_user_detail_by_email_success(self, user_api, schema_validator):
         """Test API 14: GET user account detail by email"""
-        # First create a user to retrieve
         test_data = {
             'name': 'Detail Test User',
             'email': f"detail_{uuid.uuid4().hex[:8]}@example.com",
@@ -121,7 +113,7 @@ class TestUserAPI:
             'mobile_number': '+1987654321'
         }
         
-        # Create account - expect 200 instead of 201
+        # Create account
         create_response = user_api.create_account(test_data)
         assert create_response.status_code == 200
         
